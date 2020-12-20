@@ -6,6 +6,10 @@ function App() {
   
   const [searchValue, setSearchValue] = useState("");
 
+  //passes the values down
+//null in the beginning
+  const  [movieResults, setMovieResults] = useState(null);
+
   async function fetchMovieListApi(inputValue){
     setSearchValue(inputValue);
 
@@ -16,9 +20,11 @@ function App() {
 
       const data = await response.json();
 
+      setMovieResults(data.Search)
 
 
-console.log(data)
+
+
     }catch(e){
 
     } 
@@ -26,7 +32,11 @@ console.log(data)
   return (
     <div className="App">
 
-      <Search searchValue={searchValue} fetchMovieListApi ={fetchMovieListApi} />
+      <Search 
+      searchValue={searchValue} 
+      fetchMovieListApi ={fetchMovieListApi} 
+      movieResults={movieResults}
+      />
 
      
     </div>
