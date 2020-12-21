@@ -66,9 +66,9 @@ function AppNav() {
 function App (){
   return(
 <Router>
-<Switch>   
-      <Route exact path to ="/" component={AppNav}/>
-      <Route exact path to ="/:movieTitle" component={Movie}/>
+<Switch>  
+      <Route exact path="/" component={AppNav}   >
+      <Route exact path="/:movieTitle" component={Movie}/>
       <Route render={()=><h1>Not Found</h1>}/>
 </Switch>
 
