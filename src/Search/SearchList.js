@@ -9,7 +9,10 @@ const SearchList =({movieResults}) =>{
             return (
                 <li key ={i}>
                     <img src ={item.Poster} alt ="some good movie"/>
-                    <Link to ={`${item.Title}`}>
+                    <Link to ={{
+                        pathname:`${item.imdbID}`,
+                        search: `?title=${item.Title},`}}>
+                
                     {item.Title}
                     
                     </Link>

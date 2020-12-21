@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {useLocation} from 'react-router-dom'
+import {useLocation,useParams} from 'react-router-dom'
 import queryString from 'query-string';
 import MovieDetails from "./MovieDetails";
 
@@ -11,6 +11,9 @@ const Movie = () => {
     const [movieDetail, setMovieDetail] = useState(null);
     const movie = queryString.parse(search);
 
+    let {movieTitle} = useParams();
+
+
     async function fetchMovieDetail(){
 
     const MOVIE_API_KEY = process.env.REACT_APP_MOVIE_OMBD_API;
@@ -21,18 +24,16 @@ const Movie = () => {
                 );
             
             const data = await response.json();
+
+            data.imdb =movieTitle
     
             setMovieDetail(data)
-        }catch(e){
-
-        }
+        }catch(e){}
     }
 
 
     useEffect(()=>{
        fetchMovieDetail();
-    
-
     },[]);
 
 

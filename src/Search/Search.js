@@ -7,7 +7,7 @@ const Search = ({
     searchValue, 
     fetchMovieListApi,
     movieResults,
-    isFetching
+    isFetching,
 })=>{
     return(
         <div className="search">
@@ -16,7 +16,7 @@ const Search = ({
         onChange ={(e)=> fetchMovieListApi(e.target.value)}
         type ="text"
             />
-{ searchValue !== ""&& isFetching && <SearchList movieResults ={movieResults}/>}
+{ searchValue !== ""&&isFetching && <SearchList movieResults ={movieResults}/>}
     </div>
     )
 
