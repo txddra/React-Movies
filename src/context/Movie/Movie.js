@@ -1,10 +1,11 @@
 import React from 'react';
 
-
-export const Movie = () => {
+const Movie = () => {
     return (
         <div>
-            
+            movies!
         </div>
     )
 }
+
+export default Movie

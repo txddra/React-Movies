@@ -6,7 +6,8 @@ import "./Search.css";
 const Search = ({
     searchValue, 
     fetchMovieListApi,
-    movieResults
+    movieResults,
+    isFetching
 })=>{
     return(
         <div className="search">
@@ -15,7 +16,7 @@ const Search = ({
         onChange ={(e)=> fetchMovieListApi(e.target.value)}
         type ="text"
             />
-{ searchValue !== "" && <SearchList movieResults ={movieResults}/>}
+{ searchValue !== ""&& isFetching && <SearchList movieResults ={movieResults}/>}
     </div>
     )
 
