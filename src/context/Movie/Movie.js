@@ -1,9 +1,10 @@
 import React from 'react';
+import MovieDetails from "./MovieDetails";
 
 const Movie = () => {
     return (
         <div>
-            movies!
+            <MovieDetails />
         </div>
     )
 }
