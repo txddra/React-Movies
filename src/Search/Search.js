@@ -1,5 +1,6 @@
 import React from "react";
 import  SearchList  from "./SearchList";
+import "./Search.css";
 
 
 const Search = ({
@@ -8,7 +9,7 @@ const Search = ({
     movieResults
 })=>{
     return(
-        <div>
+        <div className="search">
         <input 
         value ={searchValue}
         onChange ={(e)=> fetchMovieListApi(e.target.value)}

@@ -1,4 +1,5 @@
 import React from "react";
+import './Search.css';
 
 const SearchList =({movieResults}) =>{
 
@@ -12,7 +13,7 @@ const SearchList =({movieResults}) =>{
             )
         })
     }
-    return <ul><div>{showMovieList()}</div></ul>
+    return <ul className="results"><div>{showMovieList()}</div></ul>
 };
 
 export default SearchList;

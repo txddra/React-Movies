@@ -1,14 +1,27 @@
 import {useState} from 'react'
 import './App.css';
 import Search from "./Search/Search";
+import { BrowserRouter as Router, Route } from "react-router-dom"
 
-function App() {
+
+function App (){
+  return(
+    <Router>
+      <Route to ="/" component={AppNav}/>
+    </Router>
+
+  )
+}
+
+function AppNav() {
+
+
   
   const [searchValue, setSearchValue] = useState("");
 
   //passes the values down
 //null in the beginning
-  const  [movieResults, setMovieResults] = useState(null);
+  const  [movieResults, setMovieResults] = useState([]);
 
   async function fetchMovieListApi(inputValue){
     setSearchValue(inputValue);
@@ -17,10 +30,10 @@ function App() {
 
     try{
       const response = await fetch(`http://omdbapi.com/?apikey=${MOVIE_API_KEY}&s=${inputValue}`)
-
+   
       const data = await response.json();
 
-      setMovieResults(data.Search)
+      setMovieResults(data.Search|| [])
 
 
 
