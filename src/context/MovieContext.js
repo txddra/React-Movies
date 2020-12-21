@@ -1,9 +1,3 @@
 import React from 'react'
 
-export const MovieContext = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+export const MovieContext = React.createContext({})
